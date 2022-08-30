@@ -26,10 +26,10 @@
 # operator.map {|o| 2.method(o).(2) }
 
 puts "Enter A:"
-a = gets.to_i
+a = gets.to_f
 
 puts "Enter B:"
-b = gets.to_i
+b = gets.to_f
 
 puts "Enter operator +, -, *, /"
 operator = gets.strip
@@ -39,5 +39,11 @@ until ["+", "-", "*", "/"].include?(operator)
     operator = gets.strip
 end
 
-c = a.send(operator, b)
-puts "Answer: #{c}"
+if operator == "/" && b == 0
+    puts "Zero NOT!"
+    exit
+else
+    c = a.send(operator, b)
+    puts "Answer: #{c.round(2)}"
+end
+
