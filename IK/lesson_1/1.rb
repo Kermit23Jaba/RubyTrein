@@ -25,6 +25,7 @@
 
 # user_input_in_kilometers = gets.to_f
 
+
 # result_in_miles = user_input_in_kilometers / 1.4
 
 # puts "В #{user_input_in_kilometers}км. #{result_in_miles.round(2)} милей."
