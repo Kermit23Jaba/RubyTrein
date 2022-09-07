@@ -78,7 +78,7 @@ all_questions.shuffle.each do |question_data|
 
 
     # мы сравниваем  ответ с правильным
-    if answers[user_answer_char] == correct_answer
+    if answers[user_answer_char] == correct_answer #текс = текс
         puts "Верно!"
         correct_answers = correct_answers + 1
 
