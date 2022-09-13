@@ -46,7 +46,7 @@ all_questions.shuffle.each do |question_data|
     # индекс этого ответа => i
     answers = question_data[:answers].shuffle.each_with_index.inject({}) do |result, (answer, i)|
         # На каждой итерации выводим по 1 ответу
-        #result это пустой хэш
+        #result это пустой хэш {}
         answer_char = (a_code + i).chr #получаем букву для ответа
         result[answer_char] = answer # result = {"A" => "Эквадор"}
 
