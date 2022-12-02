@@ -6,4 +6,4 @@
 # puts zodiac_name.include?(zodiac) ? tweets.transform_keys(&:downcase)[zodiac] : 'Введите верное имя знака зодиака!'
 
 arr = %w[av df gf]
-p arr.map(&:upcase) #это из функционального програмирования равносильно такой записи arr.map { |i| i.upcase }
+p arr.map(&:capitalize) #это из функционального програмирования равносильно такой записи arr.map { |i| i.upcase }
