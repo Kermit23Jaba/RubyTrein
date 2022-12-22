@@ -1,12 +1,20 @@
 require_relative 'question_data'
 require_relative 'file_writer'
 require_relative 'statistics'
+require_relative 'input_reader'
+
 
 class Engine
     def initialize
         @question_data = QuestionData.new
-        puts "You name"
-        name = gets.strip
+        @input_reader = InputReader.new
+        
+
+        name = @input_reader.read(welcome_msg: "You name:",
+                                validator: ->(val) { !val.empty? }, 
+                                error_msg: "Имя не может быт пустым")
+
+        
 
         current_time = Time.now.strftime('%Y-%m-%d_%H-%M-%S')
         @writer = FileWriter.new('a', name, current_time)
@@ -51,14 +59,9 @@ class Engine
     end
 
     def ask_for_answer_char
-        loop do
-            puts "Ваш ответ (A, B, C, D):"
-            user_answer_char = gets.strip[0]
-            
-            return user_answer_char if user_answer_char.between?("A", "D")
-            
-            puts "Ответ A - D"
-        end
+        @input_reader.read( welcome_msg: "Ваш ответ",
+                            validator: ->(val) { !val.between?("A", "D") }, 
+                            error_msg: "Ответ A - D",
+                            process: ->(val) { val[0].to_s })
     end
-
 end

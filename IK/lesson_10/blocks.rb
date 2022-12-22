@@ -67,16 +67,12 @@
 #     block.call
 # end
 
-# def method2
+# def method2(&block)
+  #block.call
+  #block.call
 # end
 
 # method1(100) do 
 #     puts "Yes"
 # end
 
-
-accum("abcd") # -> "A-Bb-Ccc-Dddd"
-
-def accum(s)
-  p s.chars
-end

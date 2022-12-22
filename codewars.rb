@@ -1,15 +1,5 @@
 # b = 2
 # все числа которые делятся без остатка
-# def demo(n)
-#   metka = []
-#   k = 2
-#   while k < n
-#     metka << k if n % k == 0
-#     k = k.next
-#   end
-#   o_metka = metka.size != 0 ? metka : "#{n} is prime"
-# end
-# p demo(b)
 
 # beter
 # def divisors(n)
@@ -55,7 +45,7 @@
 
 ###################################################
 
-a = [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]
+# a = [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]
 # #my
 # def moveZeros(arr)
 #   metka = [] 
@@ -82,7 +72,6 @@ a = [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]
 # end
 # panagram?(string)
 
-
 # #########################################################################
 
 
@@ -101,16 +90,7 @@ a = [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]
 
 
 # -> "A-Bb-Ccc-Dddd"
-#  def accum(s)
-#   metka = []
-#   s.chars.each_with_index do |e, i|
-#     metka << e.upcase + e.downcase * i
-#   end
-#   metka.join("-")
-# end
-# p accum("abcd")
 
-# #beter
 # def accum(s)
 #   metka = []
 #   s.chars.each_with_index {|v, i| metka << v.upcase + v * i}
@@ -127,25 +107,7 @@ a = [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]
 
 
 # #найти слово с самым высоким рейтингом для букв a = 1, b = 2, c = 3
-# #my variant
-# word  = 'take me to semynak'
-# def demo(x)
-#  new_n = x.split(" ")
-#  new_n.inject do |result, k|
-#    sc(k) > sc(result) ? k : result
-#  end
-# end
 
-# def sc(n)
-#   schet = 0
-#   n.each_char do |num|
-#     ("a".."z").each_with_index do |v, i|
-#       schet += (i + 1) if num == v
-#     end
-#   end
-#   schet
-# end
-# p demo(word) #semynak
 # #best
 # def high(x)
 #   x.scan(/\w+/).max_by{|x|x.sum-x.size*96}
@@ -180,12 +142,6 @@ a = [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]
 # arr = 'abcghbnyy' #=>  ['ab', 'c_']
 
 # def solution(str)
-#   str += "_" if str.size.odd?
-#   (0..str.size-1).step(2).map {|i| str[i]+str[i+1]}
-# end
-	
-# Better Solution
-# def solution(str)
 #   (str + '_').scan(/../)
 # end
 
@@ -196,20 +152,86 @@ a = [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]
 #В этой ката вы должны, учитывая строку, заменить каждую букву ее позицией в алфавите. 
 #Если что-то в тексте не является буквой, игнорируйте это и не возвращайте. «а» = 1, «б» = 2 и т. д.
 
-a = "When index is negative, counts backward from the end of the array"
+#a = "When index is negative, counts backward from the end of the array"
 
-def alphabet_position(text)
-  text.downcase.chars.select{ |i| ("a".."z").include?(i) }.map{ |x| x.ord - 96 }.join(" ")
-end
+# def alphabet_position(text)
+#   text.downcase.chars.select{ |i| ("a".."z").include?(i) }.map{ |x| x.ord - 96 }.join(" ")
+# end
 
-#beter
-def alphabet_position(text)
-  text.gsub(/[^a-z]/i, '')#.chars.map{ |c| c.downcase.ord - 96 }.join(' ')
-end
+# #beter
+# def alphabet_position(text)
+#   text.gsub(/[^a-z]/i, '')#.chars.map{ |c| c.downcase.ord - 96 }.join(' ')
+# end
 
-p alphabet_position(a)
+# p alphabet_position(a)
 #"23 8 5 14 9 14 4 5 24 9 19 14 5 7 1 20 9 22 5 3 15 21 14 20 19 2 1 3 11 23 1 18 4 6 18 15 13 20 8 5 5 14 4 15 6 20 8 5 1 18 18 1 25"
 
+
 #############################################################
+# # Цифры привести в цифру < 10
+# def digital_root(n)
+#   n < 10 ? n : digital_root(n.to_s.scan(/./).map(&:to_i).sum)
+# end
+
+# #the best
+# def digital_root(n)
+#   n < 10 ? n : digital_root(n.digits.sum)
+# end
+
+# p digital_root(23011991) #4
 
 
+#############################################
+
+# arr = [2, 1, 4, 8, 2]
+
+# #the better
+# def find_outlier(integers)
+#   integers.partition(&:odd?).find(&:one?).first
+# end
+
+# a = arr.partition(&:odd?) # [[1], [2, 4, 8, 2]] Возвращает 2 массива где в первом будет согласно условию
+# b = a.find(&:one?) #[1] Где только один элемент
+
+
+############################################
+
+
+# def read(welcome_msg: nil, validator: nil, error_msg: nil)
+#   puts welcome_msg unless welcome_msg.nil?
+  
+#   value = gets.strip
+#   return value if validator.nil? || validator.call(value)
+
+#   puts error_msg unless error_msg.nil?
+
+#   read(welcome_msg: welcome_msg, validator:validator, error_msg: error_msg)
+# end
+
+# read(welcome_msg: "You name:", 
+#   validator: ->(val) { !val.empty? }, 
+#   error_msg: "Имя не может быт пустым")
+
+
+##############################################
+
+#n = [1, 5, 3, 8, 4]
+
+# def demo(arr)
+#   len = arr.size #5
+#   loop do
+#     sw = false
+#     (len - 1).times do |i|
+#       if arr[i] > arr[i+1]
+#         arr[i], arr[i+1] = arr[i+1], arr[i]
+#         sw = true
+#       end
+#     end
+#     break unless sw #если не true
+#   end
+#   arr
+# end
+
+# p demo(n)
+
+p "dsbfb".skan(//)

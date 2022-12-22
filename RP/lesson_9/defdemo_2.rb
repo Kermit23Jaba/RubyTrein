@@ -38,17 +38,14 @@
 #   puts "Иду на лево"
 #  end
 
-# arr = {left: "лево", rigth: "право", up: "вверх", down: "вниз"}
+arr = {left: "лево", rigth: "право", up: "вверх", down: "вниз"}
 
-# arr.sort_by{rand()}.each do |key, value|
-#   puts "Робот идет #{value}"
-# end
+arr.sort_by{rand()}.each do |_, value|
+  puts "Робот идет #{value}"
+end
 
-# array = [[:left, "лево"], [:rigth, "право"], [:up, "вверх"], [:down, "вниз"]]
+array = [[:left, "лево"], [:rigth, "право"], [:up, "вверх"], [:down, "вниз"]]
 
-# array.shuffle.to_h.each do |key, value|
-#   puts "Робот идет #{value}"
-# end
-
-
-"aaa".object_id
+array.shuffle.to_h.each do |_, value|
+  puts "Робот идет #{value}"
+end

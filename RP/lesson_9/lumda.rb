@@ -21,23 +21,23 @@ if answer == "Y" && age >= 18
 
     actions = 
     {
-        "000" => lambda { |money|
+        "000": lambda { |money|
             puts "You balance zero"
             0
         },
-        "111" => [10, add_money_proc],
-        "222" => [20, add_money_proc],
-        "333" => [30, add_money_proc],
-        "444" => [40, add_money_proc],
-        "555" => [50, add_money_proc],
-        "666" => lambda { |money|
+        "111": [10, add_money_proc],
+        "222": [20, add_money_proc],
+        "333": [30, add_money_proc],
+        "444": [40, add_money_proc],
+        "555": [50, add_money_proc],
+        "666": lambda { |money|
                 puts "You lose half money"
                 money / 2
         },
-        "777"=> [70, sub_money_proc],
-        "888"=> [80, sub_money_proc],
-        "999"=> [90, sub_money_proc],
-        "123"=> [123, sub_money_proc]
+        "777": [70, sub_money_proc],
+        "888": [80, sub_money_proc],
+        "999": [90, sub_money_proc],
+        "123": [123, sub_money_proc]
     }
 
     1000.times do 

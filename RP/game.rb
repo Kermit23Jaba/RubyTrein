@@ -1,7 +1,7 @@
 
 class Pravo
-
   attr_reader :name
+
   def initialize name
     @name = name
     @health = [100, 100, 100]
@@ -51,8 +51,8 @@ class Pravo
     p "Команда #{name} c здоровьем #{health}"
     exit if victory(name, health)
   end
-
 end
+
 bot_1 = Pravo.new("Autobots")
 bot_2 = Pravo.new("Decepticons")
 
@@ -61,10 +61,4 @@ loop do
   bot_2.och
 end
 
-
-# p bot_1.kogo_ataka(z)
-# 50.times do
-#   och("Команда_1", one)
-#   och("Команда_2", two)
-# end
 
